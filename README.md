@@ -11,19 +11,38 @@ This project focuses on analyzing financial transaction data to detect fraudulen
 - 
 ## 🛠 Tools Used
 - MySQL (Data cleaning and Analysis)
-- Power BI (Creating Dashboard)
+- Power BI (Dashboard and Visualization)
 - DAX (Data Analysis Expressions)
+- Csv(Dataset)
 
+
+##  Dataset Description
+
+The dataset contains transaction-level information:
+
+* Transaction type
+* Amount
+* Sender & Receiver
+* Account balances
+* Fraud indicators (`isFraud`, `isFlaggedFraud`)
   
-   
-## 📊 Power BI Dashboard Preview
-![Dashboard](Dashboard.png)
+##  Data Cleaning
 
-## 📈 Key Insights
-- Fraud is higher in specific transaction types (like TRANSFER & CASH_OUT)
-- High-value transactions show increased fraud risk
-- Clear patterns observed in fraud trends over time
-- Interactive slicers help dynamic filtering
+* Checked for missing values
+* Removed duplicate records
+* Validated transaction amounts
+* Identified balance mismatches
+* Ensured data consistency
+
+##  Exploratory Data Analysis (EDA)
+
+* Calculated total transactions and fraud percentage
+* Analyzed fraud distribution by transaction type
+* Compared actual fraud vs system-flagged fraud
+* Studied time-based patterns using step
+* Identified top fraudulent users
+* Analyzed transaction amount behavior
+
 ## 💡 Features
 - KPI Cards (Total Transactions, Fraud Count, Fraud %)
 - Fraud Trend Analysis (Line Chart)
@@ -31,29 +50,66 @@ This project focuses on analyzing financial transaction data to detect fraudulen
 - Top Risk Transactions Table
 - Interactive Filters (Slicers)
 
-## 💡 Recommendations / Business Insights
+## 📊 Dashboard Preview
 
-Based on the analysis of transaction data, the following insights can help in fraud prevention:
+![Dashboard](Dashboard.png)
 
-###  1. Monitor High-Risk Transaction Types
-- Fraud is significantly higher in **TRANSFER** and **CASH_OUT** transactions  
-- These transaction types should have stricter verification steps
 
-###  2. Flag High-Value Transactions
-- Transactions with large amounts show higher fraud probability  
-- Set real-time alerts for high-value transfers
+## 🔍 Key Insights
 
-### 3. Real-Time Fraud Detection System
-- Implement automated monitoring for suspicious patterns  
-- Use threshold-based alerts for unusual activity spikes
+### 1. Fraud is Rare but Critical
 
-### 4. Customer Verification Improvements
-- Add multi-factor authentication for risky transactions  
-- Especially for new or inactive users
+* Fraud rate ≈ **0.8%**
+* Highly imbalanced dataset
 
-### 5. Continuous Monitoring
-- Fraud patterns change over time  
-- Regular model/dataset updates are necessary for accuracy
+👉 Fraud detection becomes challenging due to low occurrence
 
-## 📊 Final Insight
-Fraud is not random — it follows patterns based on transaction type, amount, and user behavior. Early detection can significantly reduce financial loss.
+### 2. Fraud Concentration
+
+* Fraud is higher in specific transaction types
+
+👉 High-risk transaction types require monitoring
+
+### 3. Detection System Gap
+
+* Many fraud cases are not flagged (`isFlaggedFraud = 0`)
+
+👉 Indicates inefficiency in detection logic
+
+### 4. Amount Alone is Not Enough
+
+* High-value transactions are not always fraud
+
+👉 Multiple factors are needed for detection
+
+### 5. Repeated Fraud Users
+
+* Some users perform multiple fraudulent transactions
+
+👉 These users should be monitored or blocked
+
+### 6. Time-Based Patterns
+
+* Fraud varies across different time steps
+
+👉 Suggests need for real-time monitoring
+
+### 7. Data Anomalies
+
+* Balance mismatches observed in some transactions
+
+👉 Indicates potential suspicious activity
+
+## 💡 Recommendations
+
+* Improve fraud detection rules to reduce false negatives
+* Monitor high-risk transaction types
+* Implement real-time fraud alerts
+* Track and block suspicious users
+* Use advanced techniques like anomaly detection
+
+## 🎯 Conclusion
+
+Fraud detection is a challenging problem due to the highly imbalanced nature of the data. Effective detection requires pattern analysis, improved system logic, and real-time monitoring rather than relying on simple rules.
+
+
