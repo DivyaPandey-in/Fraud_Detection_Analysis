@@ -15,16 +15,9 @@ This project focuses on analyzing financial transaction data to detect fraudulen
 - DAX (Data Analysis Expressions)
 - Excel (Data preprocessing)
   
-## 📁 Project Files
-- `Fraud_Detection_Analysis.sql` → SQL queries for analysis  
-- `Fraud_Detection_PowerBI_Dashboard.pbix` → Power BI dashboard  
-- `dashboard.png` → Dashboard preview image
    
 ## 📊 Power BI Dashboard Preview
-
 ![Dashboard](Dashboard.png)
-
----
 
 ## 📈 Key Insights
 - Fraud is higher in specific transaction types (like TRANSFER & CASH_OUT)
