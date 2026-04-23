@@ -17,7 +17,7 @@ This project focuses on analyzing financial transaction data to detect fraudulen
   
    
 ## 📊 Power BI Dashboard Preview
-![Dashboard](Dashboard.png)
+![Dashboard](dashboard.png)
 
 ## 📈 Key Insights
 - Fraud is higher in specific transaction types (like TRANSFER & CASH_OUT)
